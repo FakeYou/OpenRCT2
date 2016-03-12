@@ -584,6 +584,7 @@
     <ClCompile Include="src\drawing\drawing_fast.cpp">
       <Filter>Source\Drawing</Filter>
     </ClCompile>
+    <ClCompile Include="src\procedural\procedural.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\management\award.h">
@@ -890,5 +891,6 @@
     <ClInclude Include="src\core\Guard.hpp" />
     <ClInclude Include="src\core\Diagnostics.hpp" />
     <ClInclude Include="src\core\Json.hpp" />
+    <ClInclude Include="src\procedural\procedural.h" />
   </ItemGroup>
 </Project>

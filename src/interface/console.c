@@ -423,6 +423,13 @@ static int cc_echo(const utf8 **argv, int argc)
 	return 0;
 }
 
+static int cc_start_procedural(const utf8 **argv, int argc)
+{
+	gStartProcedural = true;
+	console_close();
+	return 0;
+}
+
 static int cc_get(const utf8 **argv, int argc)
 {
 	if (argc > 0) {
@@ -841,6 +848,7 @@ static int cc_object_count(const utf8 **argv, int argc) {
 				break;
 			}
 		}
+
 		console_printf("%s: %d/%d", object_type_names[i], entryGroupIndex, object_entry_group_counts[i]);
 	}
 
@@ -951,7 +959,8 @@ console_command console_command_table[] = {
 	{ "object_count", cc_object_count, "Shows the number of objects of each type in the scenario.", "object_count" },
 	{ "twitch", cc_twitch, "Twitch API" },
 	{ "reset_user_strings", cc_reset_user_strings, "Resets all user-defined strings, to fix incorrectly occurring 'Chosen name in use already' errors.", "reset_user_strings" },
-	{ "fix_banner_count", cc_fix_banner_count, "Fixes incorrectly appearing 'Too many banners' error by marking every banner entry without a map element as null.", "fix_banner_count" }
+	{ "fix_banner_count", cc_fix_banner_count, "Fixes incorrectly appearing 'Too many banners' error by marking every banner entry without a map element as null.", "fix_banner_count" },
+	{ "start_procedural", cc_start_procedural, "Start procedural generation of roller coasters", "start_procedural" }
 };
 
 static int cc_windows(const utf8 **argv, int argc) {

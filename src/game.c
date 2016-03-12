@@ -36,6 +36,7 @@
 #include "management/news_item.h"
 #include "management/research.h"
 #include "network/network.h"
+#include "procedural/procedural.h"
 #include "object.h"
 #include "openrct2.h"
 #include "peep/peep.h"
@@ -64,6 +65,7 @@
 int gGameSpeed = 1;
 float gDayNightCycle = 0;
 bool gInUpdateCode = false;
+bool gStartProcedural = false;
 
 extern void game_command_callback_place_banner(int eax, int ebx, int ecx, int edx, int esi, int edi, int ebp);
 
@@ -251,6 +253,7 @@ void game_update()
 
 	// 0x006E3AEC // screen_game_process_mouse_input();
 	screenshot_check();
+	procedural_check();
 	game_handle_keyboard_input();
 
 	// Determine how many times we need to update the game

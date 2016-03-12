@@ -122,6 +122,7 @@ extern GAME_COMMAND_POINTER* new_game_command_table[66];
 extern int gGameSpeed;
 extern float gDayNightCycle;
 extern bool gInUpdateCode;
+extern bool gStartProcedural;
 
 void game_increase_game_speed();
 void game_reduce_game_speed();
